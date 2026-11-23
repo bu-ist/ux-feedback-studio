@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UX Feedback Studio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <img src="../icons/icon48.png" alt="" class="brand-icon" />
+        <div>
+          <h1>UX Feedback Studio</h1>
+          <span class="badge-zdr">100% Local · Zero Network</span>
+        </div>
+      </div>
+      <button id="refreshBtn" class="icon-btn" title="Refresh folder">↻</button>
+    </header>
+
+    <!-- Bound Folder Card -->
+    <section class="card folder-card" id="folderCard">
+      <div class="folder-row">
+        <div class="folder-info">
+          <span class="label">Bound Project Folder</span>
+          <div class="folder-name" id="folderName">Not bound yet</div>
+          <div class="folder-sub" id="folderSub">Saves into <code>ui-feedback/&lt;id&gt;-&lt;slug&gt;/</code></div>
+        </div>
+        <div class="folder-actions">
+          <button id="bindFolderBtn" class="btn btn-secondary">Bind Folder</button>
+        </div>
+      </div>
+      <div id="reconnectBanner" class="reconnect-banner hidden">
+        <span>Chrome requires a quick click to restore write access after restart.</span>
+        <button id="reconnectBtn" class="btn btn-warning btn-sm">Reconnect</button>
+      </div>
+      <div class="author-row">
+        <label for="authorInput" class="label">Author (optional)</label>
+        <input id="authorInput" type="text" class="author-input" placeholder="Your name or @handle" />
+      </div>
+    </section>
+
+    <!-- Pending Capture Banner (if user saved before folder was bound/reconnected) -->
+    <section id="pendingBanner" class="card pending-card hidden">
+      <div class="pending-header">
+        <strong>Unsaved Capture Waiting</strong>
+        <button id="discardPendingBtn" class="text-btn">Discard</button>
+      </div>
+      <p id="pendingMeta" class="pending-meta"></p>
+      <button id="savePendingBtn" class="btn btn-primary btn-full">Save Pending Feedback to Folder</button>
+    </section>
+
+    <!-- Primary Capture CTA -->
+    <section class="capture-section">
+      <button id="annotateBtn" class="btn btn-primary btn-lg btn-full">
+        <span>Capture &amp; Annotate Page</span>
+        <kbd>Alt+Shift+F</kbd>
+      </button>
+      <div id="statusToast" class="toast hidden"></div>
+    </section>
+
+    <!-- Queue Header & Agent Prompt Helper -->
+    <section class="queue-section">
+      <div class="queue-header">
+        <div class="queue-title">
+          <h2>Feedback Queue</h2>
+          <span id="openCount" class="pill">0 open</span>
+        </div>
+        <button id="copyPromptBtn" class="btn btn-ghost btn-sm" title="Copy a prompt telling your AI agent to review open feedback">
+          Copy AI Prompt
+        </button>
+      </div>
+
+      <div id="filterTabs" class="filter-tabs">
+        <button class="tab active" data-filter="open">Open</button>
+        <button class="tab" data-filter="all">All</button>
+        <button class="tab" data-filter="resolved">Resolved</button>
+      </div>
+
+      <div id="feedbackList" class="feedback-list">
+        <div class="empty-state">Bind a project folder to see and save feedback items.</div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
