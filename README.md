@@ -123,7 +123,7 @@ On first save into a bound folder, the extension creates `ui-feedback/` along wi
 id: "001"
 title: "Fix nav overlap"
 status: open
-author: "TCerato"
+author: "Jane Doe"
 created_at: "2026-11-23T17:40:54.998Z"
 url: "http://localhost:3000/help"
 page_title: "Help — My App"
@@ -142,7 +142,7 @@ The primary action button crowds the navigation tabs at 1440px.
 
 ## Page Context & Environment
 
-- **Author:** TCerato
+- **Author:** Jane Doe
 - **URL:** http://localhost:3000/help
 - **Page Title:** Help — My App
 - **Viewport:** `1440x900` (DPR: 2)
@@ -171,7 +171,7 @@ The primary action button crowds the navigation tabs at 1440px.
 ```
 
 ### Optional App Metadata Hooks
-Apps don't need any integration to work with UX Feedback Studio, but if your app renders `<meta>` tags matching `build`, `version`, `commit`, `branch`, `release`, `env`, `user`, `role`, or `feedback` (for example `<meta name="app-build" content="1.4.2 main@abc123">` or `<meta name="feedback-user" content="Alex Rivera · Staff">`), they are automatically captured into `feedback.md`.
+Apps don't need any integration to work with UX Feedback Studio, but if your app renders `<meta>` tags matching `build`, `version`, `commit`, `branch`, `release`, `env`, `user`, `role`, or `feedback` (for example `<meta name="app-build" content="1.4.2 main@abc123">` or `<meta name="feedback-user" content="Jane Doe · Admin">`), they are automatically captured into `feedback.md`.
 
 ### Git Tracking Policy
 * **Default (Personal local loop):** Add `ui-feedback/` to your project's `.gitignore` so screenshots stay strictly local.
@@ -190,3 +190,9 @@ Apps don't need any integration to work with UX Feedback Studio, but if your app
 * `sidepanel/markdown.js` — YAML frontmatter and Markdown serializer/parser.
 * `sidepanel/db.js` — IndexedDB persistence for `FileSystemDirectoryHandle`.
 * `icons/` — Extension icons (`16`, `48`, `128`).
+
+---
+
+## License
+
+MIT — see [LICENSE](./LICENSE). Free to use, modify, and distribute.
